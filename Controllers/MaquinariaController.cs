@@ -55,5 +55,13 @@ namespace TestXiliosoft.Controllers
             }
             return View(maquinaria);
         }
+
+        public IActionResult Delete(string id)
+        {
+            Maquinarium maquinaria = _context.Maquinaria.Where(m => m.Serie == id).FirstOrDefault();
+            _context.Remove(maquinaria);
+            _context.SaveChanges(true);
+            return RedirectToAction("Index");
+        }
     }
 }

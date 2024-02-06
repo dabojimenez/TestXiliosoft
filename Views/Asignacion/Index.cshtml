@@ -1,0 +1,19 @@
+﻿@model TestXiliosoft.Models.DTO.AsignacionDTO;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@foreach(var empleado in Model.Empleados)
+{
+    <p>@empleado.Nombre</p>
+}
+
+<h2>Maquinaria</h2>
+
+@foreach (var empleado in Model.Maquinarias)
+{
+    <p>@empleado.Descripcion</p>
+}
